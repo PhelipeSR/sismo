@@ -14,13 +14,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema sismo
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `engne598_sismo` DEFAULT CHARACTER SET utf8 ;
-USE `engne598_sismo` ;
+CREATE SCHEMA IF NOT EXISTS `sismo` DEFAULT CHARACTER SET utf8 ;
+USE `sismo` ;
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`usuario`
+-- Table `sismo`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`usuario` (
+CREATE TABLE IF NOT EXISTS `sismo`.`usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   `matricula` VARCHAR(255) NULL,
@@ -37,9 +37,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`departamento`
+-- Table `sismo`.`departamento`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`departamento` (
+CREATE TABLE IF NOT EXISTS `sismo`.`departamento` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
@@ -48,9 +48,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`materia`
+-- Table `sismo`.`materia`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`materia` (
+CREATE TABLE IF NOT EXISTS `sismo`.`materia` (
   `codigo` INT NOT NULL,
   `nome` VARCHAR(255) NULL,
   `departamento_id` INT NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `engne598_sismo`.`materia` (
   INDEX `fk_materia_departamento1_idx` (`departamento_id` ASC),
   CONSTRAINT `fk_materia_departamento1`
     FOREIGN KEY (`departamento_id`)
-    REFERENCES `engne598_sismo`.`departamento` (`id`)
+    REFERENCES `sismo`.`departamento` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -66,9 +66,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`grupo_estudo`
+-- Table `sismo`.`grupo_estudo`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`grupo_estudo` (
+CREATE TABLE IF NOT EXISTS `sismo`.`grupo_estudo` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NULL,
   `horario` VARCHAR(255) NULL,
@@ -82,12 +82,12 @@ CREATE TABLE IF NOT EXISTS `engne598_sismo`.`grupo_estudo` (
   INDEX `fk_grupo_estudo_materia1_idx` (`materia_codigo` ASC),
   CONSTRAINT `fk_grupo_estudo_usuario1`
     FOREIGN KEY (`usuario_id`)
-    REFERENCES `engne598_sismo`.`usuario` (`id`)
+    REFERENCES `sismo`.`usuario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_grupo_estudo_materia1`
     FOREIGN KEY (`materia_codigo`)
-    REFERENCES `engne598_sismo`.`materia` (`codigo`)
+    REFERENCES `sismo`.`materia` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -95,9 +95,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`monitorias`
+-- Table `sismo`.`monitorias`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`monitorias` (
+CREATE TABLE IF NOT EXISTS `sismo`.`monitorias` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `turma` VARCHAR(4) NULL,
   `status` INT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `engne598_sismo`.`monitorias` (
   INDEX `fk_monitorias_materia1_idx` (`materia_codigo` ASC),
   CONSTRAINT `fk_monitorias_materia1`
     FOREIGN KEY (`materia_codigo`)
-    REFERENCES `engne598_sismo`.`materia` (`codigo`)
+    REFERENCES `sismo`.`materia` (`codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -114,9 +114,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`candidatar`
+-- Table `sismo`.`candidatar`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`candidatar` (
+CREATE TABLE IF NOT EXISTS `sismo`.`candidatar` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `remunerada` INT NULL,
   `agencia` VARCHAR(45) NULL,
@@ -131,12 +131,12 @@ CREATE TABLE IF NOT EXISTS `engne598_sismo`.`candidatar` (
   INDEX `fk_candidatar_monitoria_monitorias1_idx` (`monitorias_id` ASC),
   CONSTRAINT `fk_candidatar_monitoria_usuario1`
     FOREIGN KEY (`usuario_id`)
-    REFERENCES `engne598_sismo`.`usuario` (`id`)
+    REFERENCES `sismo`.`usuario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_candidatar_monitoria_monitorias1`
     FOREIGN KEY (`monitorias_id`)
-    REFERENCES `engne598_sismo`.`monitorias` (`id`)
+    REFERENCES `sismo`.`monitorias` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -144,9 +144,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`recuperacao`
+-- Table `sismo`.`recuperacao`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`recuperacao` (
+CREATE TABLE IF NOT EXISTS `sismo`.`recuperacao` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `data_expiracao` DATETIME NULL,
   `token` VARCHAR(255) NULL,
@@ -155,15 +155,15 @@ CREATE TABLE IF NOT EXISTS `engne598_sismo`.`recuperacao` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_recuperacao_usuario1`
     FOREIGN KEY (`usuario_id`)
-    REFERENCES `engne598_sismo`.`usuario` (`id`)
+    REFERENCES `sismo`.`usuario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
--- Table `engne598_sismo`.`cursos`
+-- Table `sismo`.`cursos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `engne598_sismo`.`cursos` (
+CREATE TABLE IF NOT EXISTS `sismo`.`cursos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `modalidade` VARCHAR(255) NULL,
   `codigo` INT NULL,
