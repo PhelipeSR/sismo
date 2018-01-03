@@ -25,47 +25,47 @@
 	<?php $this->load->view('navbar');?>
 	<div class="register-box">
 		<div class="shadow-group">
-		<div class="register-logo">
-			<a><b>CONTATO SISMO</b></a>
-		</div>
-		<div class="register-box-body">
-			<form id="formContato">
-				<div class="box-header">
-				<div class="text-center">
-					<h5 class="box-title">Dados Cadastrais</h5>
-				</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="form-group has-feedback">
-							<input id='inputNome' name="nome" type="text" class="form-control" placeholder="Nome completo">
-							<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			<div class="register-logo">
+				<a><b>CONTATO SISMO</b></a>
+			</div>
+			<div class="register-box-body">
+				<form id="formContato">
+					<div class="box-header">
+					<div class="text-center">
+						<h5 class="box-title">Dados do Usuário</h5>
+					</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group has-feedback">
+								<input id='inputNome' name="nome" type="text" class="form-control" placeholder="Nome completo">
+								<span class="glyphicon glyphicon-user form-control-feedback"></span>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="form-group has-feedback">
-							<input id='inputEmail' type="text" name="email" class="form-control" placeholder="Email">
-							<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group has-feedback">
+								<input id='inputEmail' type="text" name="email" class="form-control" placeholder="Email">
+								<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="form-group has-feedback">
-							<textarea placeholder="Digite sua mensagem" rows="8" name="conteudo"></textarea>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group has-feedback">
+								<textarea placeholder="Digite sua mensagem" rows="8" name="conteudo"></textarea>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-xs-4 col-xs-offset-4">
-						<button type="submit" class="btn btn-orange btn-block btn-flat" id="btn-contato">Enviar Mensagem</button>
+					<div class="row">
+						<div class="col-xs-4 col-xs-offset-4">
+							<button type="submit" class="btn btn-orange btn-block btn-flat" id="btn-contato">Enviar Mensagem</button>
+						</div>
 					</div>
-				</div>
-			</form>
-		</div> <!-- /.form-box -->
+				</form>
+			</div> <!-- /.form-box -->
 		</div>
 	</div> <!-- /.register-box -->
 
