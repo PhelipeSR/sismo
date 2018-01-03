@@ -207,9 +207,6 @@
 .login-logo a, .register-logo a{
   color: #222;
 }
-textarea{
-  width:100%;
-}
 .box.box-primary{
   border-top-color: #f47621;
 }

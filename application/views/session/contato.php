@@ -54,7 +54,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="form-group has-feedback">
-								<textarea placeholder="Digite sua mensagem" rows="8" name="conteudo"></textarea>
+								<textarea placeholder="Digite sua mensagem" class="form-control" rows="8" name="conteudo"></textarea>
 							</div>
 						</div>
 					</div>
