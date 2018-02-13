@@ -1,6 +1,3 @@
-// Colocar a url aqui. NÃO ESQUECER A BARRA NO FINAL ( / )
-var url = 'http://localhost/sismo/';
-
 $(document).ready( function() {
 
 	// validação dos campos e pedido ajax
@@ -53,12 +50,12 @@ $(document).ready( function() {
 							z_index: 9999,
 						});
 					}else if(data.dados == 'logado'){
-						window.location.replace(url);
+						window.location.replace(base_url());
 					}
 				},
 				beforeSend: function(){
 					$('#btn-login').prop("disabled",true);
-					$("#btn-login").html('<img src="'+url+'assets/imagens/loading.svg"> Espere...');
+					$("#btn-login").html('<i class="fa fa-spin fa-spinner"></i> Espere...');
 				},
 				complete: function(){
 					$('#btn-login').prop("disabled",false);

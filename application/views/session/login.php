@@ -58,6 +58,7 @@
 	</div> <!-- /.login-box -->
 
 	<!-- REQUIRED JS SCRIPTS -->
+	<script>var url_base = '<?php echo base_url(); ?>';function base_url(arg = '') {return url_base + arg;}</script>
 	<script src="<?php echo base_url('assets/plugins/jquery-3.2.1/jquery.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/bootstrap-3.3.7/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/inputmask-4.0.1-25/imputmask.js') ?>"></script>

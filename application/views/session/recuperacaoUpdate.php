@@ -54,6 +54,7 @@
 	</div> <!-- /.login-box -->
 
 	<!-- REQUIRED JS SCRIPTS -->
+	<script>var url_base = '<?php echo base_url(); ?>';function base_url(arg = '') {return url_base + arg;}</script>
 	<script src="<?php echo base_url('assets/plugins/jquery-3.2.1/jquery.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/bootstrap-3.3.7/js/bootstrap.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/notify-3.1.5/notify.min.js') ?>"></script>

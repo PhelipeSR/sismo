@@ -1,8 +1,5 @@
-// Colocar a url aqui. NÃO ESQUECER A BARRA NO FINAL ( / )
-var url = 'http://localhost/sismo/';
-
 function carregarPagina(){
-	window.location.replace(url+"login");
+	window.location.replace(base_url('login'));
 }
 $(document).ready( function() {
 
@@ -72,7 +69,7 @@ $(document).ready( function() {
 				},
 				beforeSend: function(){
 					$('#btn-update').prop("disabled",true);
-					$("#btn-update").html('<img src="'+url+'assets/imagens/loading.svg"> Espere...');
+					$("#btn-update").html('<i class="fa fa-spin fa-spinner"></i> Espere...');
 				},
 				complete: function(){
 					$('#btn-update').prop("disabled",false);

@@ -1,6 +1,3 @@
-// Colocar a url aqui. NÃO ESQUECER A BARRA NO FINAL ( / )
-var url = 'http://localhost/sismo/';
-
 $(document).ready( function() {
 
 	// 	// validação dos campos e pedido ajax
@@ -62,7 +59,7 @@ $(document).ready( function() {
 				},
 				beforeSend: function(){
 					$('#btn-recupera').prop("disabled",true);
-					$("#btn-recupera").html('<img src="'+url+'assets/imagens/loading.svg"> Espere...');
+					$("#btn-recupera").html('<i class="fa fa-spin fa-spinner"></i> Espere...');
 				},
 				complete: function(){
 					$('#btn-recupera').prop("disabled",false);
@@ -72,7 +69,7 @@ $(document).ready( function() {
 					$('#btn-recupera').prop("disabled",false);
 					$("#btn-recupera").html("Enviar");
 					$.notify({
-						message: "<center><span class='glyphicon glyphicon-ban-circle'></span> Ocorreu um erro interno</center>"
+						message: "<center>Ocorreu um erro interno</center>"
 					},{
 						type: 'danger',
 						mouse_over: 'pause',

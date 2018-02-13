@@ -1,6 +1,3 @@
-// Colocar a url aqui. NÃO ESQUECER A BARRA NO FINAL ( / )
-var url = 'http://localhost/sismo/';
-
 $(document).ready( function() {
 
 	// validação dos campos e pedido ajax
@@ -75,7 +72,7 @@ $(document).ready( function() {
 				},
 				beforeSend: function(){
 					$('#btn-contato').prop("disabled",true);
-					$("#btn-contato").html('<img src="'+url+'assets/imagens/loading.svg"> Espere...');
+					$("#btn-contato").html('<i class="fa fa-spin fa-spinner"></i> Espere...');
 				},
 				complete: function(){
 					$('#btn-contato').prop("disabled",false);
